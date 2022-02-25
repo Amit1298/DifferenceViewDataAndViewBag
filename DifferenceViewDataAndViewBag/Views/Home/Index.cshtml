@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h3>@ViewData["Message1"]</h3>
+<h3>@ViewBag.Message2</h3>
+
+<h3>@ViewData["CurrentDate1"]</h3>
+<h3>@ViewBag.CurrentDate2</h3>
+
+<ol>
+    @{
+        foreach (string i in (string[])ViewData["GamesArray1"])
+        {
+            <li>@i</li>
+        }
+    }
+</ol>
+
+<ol>
+    @{
+        foreach (string i in ViewBag.GamesArray2)
+        {
+            <li>@i</li>
+        }
+    }
+</ol>
+
+@{
+    var a = (DifferenceViewDataAndViewBag.Models.Employee)ViewData["Employee1"];
+    var b = ViewBag.Employee2;
+}
+@{
+    <h3>@a.EmpId</h3>
+    <h3>@a.EmpName</h3>
+    <h3>@a.EmpAge</h3>
+}
+@{
+    <h3>@b.EmpId</h3>
+    <h3>@b.EmpName</h3>
+    <h3>@b.EmpAge</h3>
+}
